@@ -1,0 +1,19 @@
+﻿@model IEnumerable<System.Security.Claims.Claim>
+
+@{
+    ViewBag.Title = "View Profile";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<dl class="dl-horizontal">
+    @foreach (var claim in Model)
+    {
+        <dt title="@claim.Type">
+            @claim.Type
+        </dt>
+
+        <dd id="@String.Format("{0}-claim", claim.Type)">@claim.Value</dd>
+    }
+</dl>
+
